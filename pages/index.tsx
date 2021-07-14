@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import CarImageSrc from './../public/car.webp'
+import UploadIcon from './../public/upload.svg'
 
 import CarImage from './../components/CarImage';
 import PaymentInfo from './../components/PaymentInfo';
@@ -15,8 +16,9 @@ export default function Home() {
               <div className="car-namevalign-text-middle">MUSTANG MACH-E</div>
               <Image
                 className="more-icon"
-                src={CarImageSrc}
+                src={UploadIcon}
                 alt="More icon"
+                width="20px"
               />
             </div>
             <div className="car-idvalign-text-middle">ID: 0730-1863</div>
