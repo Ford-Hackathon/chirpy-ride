@@ -7,7 +7,13 @@ import PaymentInfo from './../components/PaymentInfo';
 export default function Home() {
   return (
     <MapBackdrop>
-      <CarCard />
+      <CarCard model="Ford Edge"
+      distanceInMinutes={5}
+      fuelLevel={80}
+      costStart={3}
+      costPerHour={10}
+      carId="07301863"
+      />
     </MapBackdrop>
   )
 }
