@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router'
 
 interface CardData {
   imageSrc: string;
@@ -12,6 +13,12 @@ interface CardData {
 }
 
 const CarCard: React.FC<CardData> = ({ imageSrc, model, distanceInMinutes, fuelLevel, costStart, costPerHour, carId }) => {
+  const router = useRouter()
+
+  const goToReservePage = (): void => {
+    router.push('/reserve')
+  }
+
   return (
     <div className="flex flex-col mt-32">
       <div className="bg-white shadow-md  rounded-3xl p-4">
@@ -141,11 +148,12 @@ c-146 -85 -273 -162 -284 -171 -43 -39 -70 -103 -70 -166 0 -56 10 -83 122
                 </button>
               </div>
               <button
-                className="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
+                className="mb-2 md:mb-0 bg-primary px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800"
                 type="button"
                 aria-label="like"
+                onClick={ goToReservePage }
               >
-                Reserve
+                RESERVE
               </button>
             </div>
           </div>
