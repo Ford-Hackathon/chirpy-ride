@@ -4,36 +4,38 @@ import CarCard from './../components/CarCard';
 import {getAccessToken, getVehicleInformation, CarInformation } from './../constants';
 import { GetServerSideProps } from 'next';
 
-interface Props {
-  carInformation: CarInformation;
-}
+// interface Props {
+//   carInformation: CarInformation;
+// }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+// export const getServerSideProps: GetServerSideProps = async (context) => {
 
-  const accessToken = await getAccessToken();
+//   const accessToken = await getAccessToken();
 
-  // get car details (car id and car model, car image)
-  const carInformation = await getVehicleInformation(accessToken);
+//   // get car details (car id and car model, car image)
+//   const carInformation = await getVehicleInformation(accessToken);
 
-  return {
-      props: {
-          carInfo: carInformation
-      }
-  }
-}
+//   return {
+//       props: {
+//           carInfo: carInformation
+//       }
+//   }
+// }
 
-const Home: React.FC<Props> = ({ carInformation }) => {
+const Home: React.FC<void> = () => {
   return (
     <MapBackdrop>
-      <CarCard model={ carInformation.modelName }
+      <CarCard
+        model={"Edge"}
         distanceInMinutes={5}
         fuelLevel={80}
         costStart={3}
         costPerHour={10}
-        carId={ carInformation.vehicleId }
+        carId={"8a7f9fa878849d8a0179579d2f26043a"}
       />
 
-      <CarCard model="Ford Explorer"
+      <CarCard
+        model="Ford Explorer"
         distanceInMinutes={20}
         fuelLevel={40}
         costStart={2}
@@ -41,7 +43,7 @@ const Home: React.FC<Props> = ({ carInformation }) => {
         carId="aoeaon"
       />
     </MapBackdrop>
-  )
+  );
 }
 
 export default Home;

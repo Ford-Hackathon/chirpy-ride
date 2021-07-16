@@ -4,7 +4,7 @@ import MapBackdrop from './../components/MapBackdrop';
 import ReservationInfoCard from './../components/ReservationInfoCard';
 import fetch from 'node-fetch';
 
-import {authCode, clientSecret, redirectUri, clientId, GetAccessTokenResponse } from './../constants';
+import {authCode, clientSecret, redirectUri, clientId, GetAccessTokenResponse, } from './../constants';
 
 interface Data {
     access_token: string;
@@ -36,14 +36,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 const ReservePage: React.FC<Data> = ({ access_token }) => {
 
     return (
-        <MapBackdrop>
-            <ReservationInfoCard
-                carId={access_token}
-                carName="Model E"
-                fuelLevel={50}
-                rangeInMinutes={210}
-            />
-        </MapBackdrop>
+      <MapBackdrop>
+        <ReservationInfoCard
+          carId={"8a7f9fa878849d8a0179579d2f26043a" }
+          carName="Edge"
+          fuelLevel={50}
+          rangeInMinutes={210}
+        />
+      </MapBackdrop>
     );
 }
 
