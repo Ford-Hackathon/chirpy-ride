@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import MapImg from './../public/map.png'
 
 interface Data {}
 
@@ -10,7 +11,7 @@ const MapBackdrop: React.FC<Data> = ({ children }) => {
         className="min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none bg-no-repeat bg-center bg-cover"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1555421689-491a97ff2040?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)",
+            "url(./../public/map.png)",
         }}
         id="modal-id"
       >
